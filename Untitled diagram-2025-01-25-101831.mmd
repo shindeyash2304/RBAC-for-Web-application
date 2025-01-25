@@ -1,0 +1,67 @@
+flowchart TD
+    A[User Login Process] --> B{Authentication}
+    
+    B -->|Successful| C[Identify User Role]
+    C --> D[Retrieve Role Permissions]
+    
+    D --> E[Load Permitted Screens]
+    D --> F[Load Permitted Features]
+    
+    E --> G{Screen 1 Permitted?}
+    E --> H{Screen 2 Permitted?}
+    E --> I{Screen 3 Permitted?}
+    
+    F --> J{Feature 1 Permitted?}
+    F --> K{Feature 2 Permitted?}
+    F --> L{Feature 3 Permitted?}
+    
+    G -->|Yes| M[Display Screen 1]
+    G -->|No| N[Hide Screen 1]
+    
+    H -->|Yes| O[Display Screen 2]
+    H -->|No| P[Hide Screen 2]
+    
+    I -->|Yes| Q[Display Screen 3]
+    I -->|No| R[Hide Screen 3]
+    
+    J -->|Yes| S[Enable Feature 1]
+    J -->|No| T[Disable Feature 1]
+    
+    K -->|Yes| U[Enable Feature 2]
+    K -->|No| V[Disable Feature 2]
+    
+    L -->|Yes| W[Enable Feature 3]
+    L -->|No| X[Disable Feature 3]
+    
+    M --> Y[User Interface]
+    O --> Y
+    Q --> Y
+    
+    S --> Y
+    U --> Y
+    W --> Y
+    
+    N --> Y
+    P --> Y
+    R --> Y
+    
+    T --> Y
+    V --> Y
+    X --> Y
+    
+    Y --> Z[Admin Module: Role Management]
+    
+    Z --> AA[Create Roles]
+    Z --> AB[Assign Permissions]
+    Z --> AC[Modify Permissions]
+    
+    AA --> AD[Define Role R1]
+    AA --> AE[Define Role R2]
+    AA --> AF[Define Role R3]
+    
+    AB --> AG[Map Screens to Roles]
+    AB --> AH[Map Features to Roles]
+    
+    style A fill:#f96,stroke:#333,stroke-width:2px
+    style Z fill:#99f,stroke:#333,stroke-width:2px
+    style Y fill:#9f9,stroke:#333,stroke-width:2px
